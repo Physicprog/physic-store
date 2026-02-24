@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Boutique de ressources numériques premium — téléchargement instantané" />
+    <title>DigitalStore</title>
+
+    <!-- GitHub Pages SPA redirect fix -->
+    <script>
+      (function(l){
+        if(l.search[1]=='/'){
+          var d=l.search.slice(1).split('&').map(function(s){return s.replace(/~and~/g,'&')}).join('?');
+          window.history.replaceState(null,null,l.pathname.slice(0,-1)+d+l.hash);
+        }
+      }(window.location))
+    </script>
+
+    <!-- PayPal SDK — remplacez YOUR_PAYPAL_CLIENT_ID -->
+    <!-- currency=EUR, intent=capture, désactive le crédit PayPal -->
+    <script
+      src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=EUR&intent=capture&disable-funding=credit,card"
+      data-namespace="paypal"
+    ></script>
+    <script type="module" crossorigin src="/physic-store/assets/index-ZAScxYzk.js"></script>
+    <link rel="stylesheet" crossorigin href="/physic-store/assets/index-DP6KONht.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
