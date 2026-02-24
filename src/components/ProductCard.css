@@ -1,0 +1,54 @@
+.pcard {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: box-shadow var(--dur), transform var(--dur), border-color var(--dur);
+}
+.pcard:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: transparent; }
+
+.pcard__img-wrap {
+  position: relative;
+  display: block;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--c-surface2);
+}
+.pcard__img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s var(--ease);
+}
+.pcard:hover .pcard__img { transform: scale(1.045); }
+.pcard__disc-badge { position: absolute; top: 12px; left: 12px; }
+
+.pcard__body {
+  padding: 18px;
+  display: flex; flex-direction: column; gap: 6px;
+  flex: 1;
+}
+.pcard__cat {
+  font-size: .7rem; font-weight: 700;
+  color: var(--c-blue);
+  text-transform: uppercase; letter-spacing: .08em;
+}
+.pcard__name {
+  font-size: 1.0625rem; font-weight: 700;
+  color: var(--c-ink); letter-spacing: -.02em; line-height: 1.3;
+  transition: color var(--dur);
+}
+.pcard__name:hover { color: var(--c-blue); }
+.pcard__tagline { font-size: .875rem; color: var(--c-ink2); line-height: 1.5; }
+
+.pcard__rating { display: flex; align-items: center; gap: 5px; }
+.pcard__rating-txt { font-size: .75rem; color: var(--c-ink3); }
+
+.pcard__foot {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: auto; padding-top: 14px;
+  border-top: 1px solid var(--c-border);
+}
+.pcard__prices { display: flex; align-items: baseline; gap: 8px; }
+.pcard__prices .price-original { font-size: .8125rem; }
+.pcard__price { font-size: 1.125rem; font-weight: 800; }

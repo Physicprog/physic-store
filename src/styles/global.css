@@ -1,0 +1,234 @@
+/* ============================================================
+   MUSEO SANS — @font-face
+   Placez vos fichiers .woff2 dans /public/fonts/
+   Nommez-les exactement comme ci-dessous ou ajustez les noms.
+   ============================================================ */
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('/physic-store/fonts/museosans.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  --font: 'MuseoSans', 'Nunito', system-ui, sans-serif;
+
+  /* Palette — dark editorial */
+  --c-bg:        #f8f7f4;
+  --c-surface:   #ffffff;
+  --c-surface2:  #f1f0ec;
+  --c-border:    #e4e2db;
+  --c-border2:   #cccabe;
+
+  --c-ink:       #141412;
+  --c-ink2:      #5a5850;
+  --c-ink3:      #9b9890;
+
+  --c-accent:    #1a1a1a;
+  --c-accent2:   #333;
+  --c-blue:      #2563eb;
+  --c-blue-lt:   #eff6ff;
+  --c-blue-lt2:  #dbeafe;
+  --c-green:     #16a34a;
+  --c-green-lt:  #f0fdf4;
+  --c-red:       #dc2626;
+  --c-red-lt:    #fef2f2;
+  --c-amber:     #d97706;
+  --c-amber-lt:  #fffbeb;
+  --c-paypal:    #003087;
+
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-pill: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.03);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,.09), 0 4px 12px rgba(0,0,0,.05);
+  --shadow-xl: 0 24px 60px rgba(0,0,0,.11), 0 8px 24px rgba(0,0,0,.07);
+
+  --ease: cubic-bezier(.4,0,.2,1);
+  --dur: .2s;
+  --dur-slow: .35s;
+  --max-w: 1160px;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font);
+  background: var(--c-bg);
+  color: var(--c-ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--font); border: none; background: none; }
+h1,h2,h3,h4,h5 { font-weight: 800; line-height: 1.15; letter-spacing: -.025em; }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+@media (max-width: 640px) { .container { padding: 0 16px; } }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font);
+  font-size: .9375rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  transition: all var(--dur) var(--ease);
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+.btn-dark   { background: var(--c-ink);   color: #fff; }
+.btn-dark:hover  { background: #2a2a28; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-outline { background: transparent; color: var(--c-ink); border: 1.5px solid var(--c-border2); }
+.btn-outline:hover { background: var(--c-surface2); border-color: var(--c-ink); }
+.btn-ghost  { background: transparent; color: var(--c-ink2); }
+.btn-ghost:hover { background: var(--c-surface2); color: var(--c-ink); }
+.btn-blue   { background: var(--c-blue);  color: #fff; }
+.btn-blue:hover  { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,235,.28); }
+.btn-paypal { background: #009cde; color: #fff; }
+.btn-paypal:hover { background: #0085c0; transform: translateY(-1px); }
+.btn-stripe { background: var(--c-ink); color: #fff; }
+.btn-stripe:hover { background: #2a2a28; transform: translateY(-1px); }
+.btn-lg { padding: 16px 32px; font-size: 1rem; }
+.btn-sm { padding: 8px 16px; font-size: .8125rem; }
+.btn:disabled { opacity: .45; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+
+/* ============================================================
+   BADGES
+   ============================================================ */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.badge-sale     { background: var(--c-red-lt);  color: var(--c-red);   }
+.badge-featured { background: var(--c-blue-lt); color: var(--c-blue);  }
+.badge-cat      { background: var(--c-surface2); color: var(--c-ink2); }
+.badge-new      { background: #f0fdf4; color: var(--c-green);          }
+
+/* ============================================================
+   FORM
+   ============================================================ */
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font);
+  font-size: .9375rem;
+  color: var(--c-ink);
+  background: var(--c-surface);
+  outline: none;
+  transition: border-color var(--dur), box-shadow var(--dur);
+}
+.input:focus { border-color: var(--c-blue); box-shadow: 0 0 0 3px var(--c-blue-lt2); }
+.input::placeholder { color: var(--c-ink3); }
+textarea.input { resize: vertical; min-height: 100px; }
+
+.label {
+  display: block;
+  font-size: .8125rem;
+  font-weight: 700;
+  color: var(--c-ink2);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+/* ============================================================
+   CARD
+   ============================================================ */
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--dur), transform var(--dur), border-color var(--dur);
+}
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: transparent; }
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+.divider { height: 1px; background: var(--c-border); }
+
+/* ============================================================
+   PRICES
+   ============================================================ */
+.price-original { text-decoration: line-through; color: var(--c-ink3); }
+.price-sale     { color: var(--c-red); font-weight: 700; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.anim-fade-up { animation: fadeUp .45s var(--ease) both; }
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-border2); border-radius: 9999px; }
+
+/* ============================================================
+   STARS
+   ============================================================ */
+.stars { color: #f59e0b; letter-spacing: -1px; }
+
+/* ============================================================
+   SPINNER
+   ============================================================ */
+.spinner {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin .75s linear infinite;
+  flex-shrink: 0;
+}
+.spinner-dark {
+  border: 2px solid var(--c-border);
+  border-top-color: var(--c-ink);
+}
